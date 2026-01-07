@@ -1,40 +1,41 @@
+---
 
 ```markdown
 # Breast Ultrasound Lesion Segmentation using Pretrained CNN and Transformer Models
 
 ## Overview
-This repository contains the implementation and experimental code for a mini-project on **breast ultrasound lesion segmentation** using **U-Net** with **pretrained convolutional and transformer-based encoders**.
+This repository contains the implementation and experimental code for a **mini-project on breast ultrasound lesion segmentation** using **U-Net** with **pretrained CNN and Transformer encoders**.
 
-The main objective of this work is to evaluate and compare the effectiveness of different **ImageNet-pretrained CNN and Transformer backbones** when used as encoders in a U-Net architecture across multiple breast ultrasound datasets.
+The objective of this work is to evaluate and compare the effectiveness of different **ImageNet-pretrained backbones** when used as encoders in a U-Net architecture across multiple breast ultrasound datasets.
 
 ---
 
 ## Key Objectives
-- To apply **pretrained CNN encoders** within a U-Net framework for breast lesion segmentation
-- To explore **Transformer-based encoders** for capturing global contextual information
-- To conduct a **comparative analysis** across different datasets
-- To ensure **reproducibility** of experiments through clean and modular code
+- Apply pretrained CNN encoders within a U-Net framework for breast lesion segmentation
+- Explore transformer-based encoders for capturing global contextual information
+- Perform a comparative analysis across multiple datasets
+- Ensure reproducibility through clean and modular code
 
 ---
 
 ## Models and Architectures
 
 ### Base Architecture
-- **U-Net**
-- Input size: 256 × 256
-- Output: Binary segmentation mask
-- Encoder initialized with ImageNet pretrained weights
+- Model: **U-Net**
+- Input size: **256 × 256**
+- Output: **Binary segmentation mask**
+- Encoder initialization: **ImageNet pretrained weights**
 
 ---
 
 ### CNN-based Pretrained Encoders
 The following CNN backbones were evaluated as U-Net encoders:
 
-- ResNet34, ResNet50
-- DenseNet121
-- EfficientNet (B0 – B7)
-- VGG19 with Batch Normalization
-- MobileNetV2
+- ResNet34, ResNet50  
+- DenseNet121  
+- EfficientNet (B0 – B7)  
+- VGG19 with Batch Normalization  
+- MobileNetV2  
 
 These models provide strong hierarchical feature representations and serve as reliable baselines.
 
@@ -43,8 +44,8 @@ These models provide strong hierarchical feature representations and serve as re
 ### Transformer-based Pretrained Encoders
 Transformer and hybrid architectures were also explored to model long-range dependencies:
 
-- MiT (Mix Transformer) family (B0 – B5)
-- PVTv2 (Pyramid Vision Transformer)
+- **MiT (Mix Transformer)** family (B0 – B5)  
+- **PVTv2 (Pyramid Vision Transformer)**  
 
 Transformer encoders were integrated using `segmentation_models_pytorch` and `timm`.
 
@@ -93,8 +94,8 @@ A fixed random seed is used to ensure reproducibility.
 
 ### Loss Function
 To address class imbalance inherent in ultrasound images, a combined loss function is used:
-- Weighted Binary Cross-Entropy Loss
-- Dice Loss
+- **Weighted Binary Cross-Entropy Loss**
+- **Dice Loss**
 
 This combination improves foreground segmentation and stabilizes training.
 
@@ -102,11 +103,11 @@ This combination improves foreground segmentation and stabilizes training.
 
 ### Evaluation Metrics
 Model performance is evaluated using:
-- Precision
-- Recall
-- F1-score
-- Intersection over Union (IoU)
-- Dice Coefficient
+- Precision  
+- Recall  
+- F1-score  
+- Intersection over Union (IoU)  
+- Dice Coefficient  
 - Accuracy (reported for completeness)
 
 ---
@@ -122,11 +123,27 @@ pip install -r requirements.txt
 
 ### Step 2: Update Dataset Paths
 
-In both `train_cnn_mit.py` and `train_transformer.py`, modify:
+In **both** `train_cnn_mit.py` and `train_transformer.py`, update the following block:
 
 ```python
-IMG_DIR  = "path/to/dataset/Images"
-MASK_DIR = "path/to/dataset/Masks"
+# =====================================================
+# DATASET PATHS (EDIT ONLY THIS BLOCK WHEN SWITCHING DATASETS)
+# =====================================================
+
+# -------- BUSI DATASET --------
+# IMG_DIR  = "/path/to/BUSI/images"
+# MASK_DIR = "/path/to/BUSI/masks"
+
+# -------- BUS-BRA DATASET --------
+IMG_DIR  = "/path/to/BUS-BRA/Images"
+MASK_DIR = "/path/to/BUS-BRA/Masks"
+
+# -------- BrEaST DATASET --------
+# IMG_DIR  = "/path/to/BrEaST/images"
+# MASK_DIR = "/path/to/BrEaST/masks"
+
+img_dir = IMG_DIR
+mask_dir = MASK_DIR
 ```
 
 ---
@@ -192,15 +209,10 @@ These limitations were intentionally accepted to keep the project within a mini-
 
 ---
 
-## Author
 
-Final-year undergraduate mini-project
-Department of Computer Science and Engineering (AI & ML)
-
-```
 
 ---
 
-This README is **complete, clean, academic, and viva-ready**.  
-You can paste it **as-is** and submit the GitHub link confidently.
+
+If you want, next I can help you **prepare viva answers** or **justify BrEaST results**.
 ```
