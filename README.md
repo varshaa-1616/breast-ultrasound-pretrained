@@ -1,6 +1,6 @@
----
+Breast Ultrasound Lesion Segmentation using Pretrained CNN and Transformer Models
 ```markdown
-# Breast Ultrasound Lesion Segmentation using Pretrained CNN and Transformer Models
+
 
 ## Overview
 This repository contains the implementation and experimental code for a **mini-project on breast ultrasound lesion segmentation** using **U-Net** with **pretrained CNN and Transformer encoders**.
@@ -215,6 +215,7 @@ These limitations were intentionally accepted to keep the project within a mini-
 
 If you want, next I can help you **prepare viva answers** or **justify BrEaST results**.
 ```
+
 
 
 
