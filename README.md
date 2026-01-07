@@ -1,5 +1,3 @@
----
-
 ```markdown
 # Breast Ultrasound Lesion Segmentation using Pretrained CNN and Transformer Models
 
@@ -216,3 +214,4 @@ These limitations were intentionally accepted to keep the project within a mini-
 
 If you want, next I can help you **prepare viva answers** or **justify BrEaST results**.
 ```
+
